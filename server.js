@@ -94,12 +94,12 @@ function getfile(req, res, next) {
 	timestamp = Number(timestamp);
 
 	let files = fs.readdirSync("./public/" + path.dirname(req.route.path));
+
 	//should check so that all files are data files
-
 	let fileIndex = files.findIndex( (file) => {
-
-		let datetime = Number(file.replace('_', ''));
-
+		let date = file.substr(0, 8);
+		let time = file.substr(9, 6);
+		let datetime = Number(date + time);
 		if(timestamp < datetime){
 			return true;
 		} else {
@@ -107,6 +107,7 @@ function getfile(req, res, next) {
 		}
 	});
 
+	console.log( fileIndex);
 	if(fileIndex == -1){
 		fileIndex = files.length - 1; 
 		req.file = files[fileIndex];
