@@ -24,7 +24,7 @@ var options = {
 // ======
 app.get('/:id(\\d+)/', function (req, res) {
 	console.log(1);
-	res.sendFile(index.data[req.params.id], options);
+	res.sendFile( path.join("/gm/meta/", path.basename(index.data[req.params.id]), "info.json"), options);
 });
 
 app.get('/image/:id/:date', function (req, res) {
