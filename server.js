@@ -24,7 +24,8 @@ var options = {
 // ======
 app.get('/:id(\\d+)/', function (req, res) {
 	console.log(1);
-	res.sendFile( path.join("/gm/meta/", path.basename(index.data[req.params.id]), "info.json"), options);
+	console.log(path.join(index.meta[req.params.id], "info.json"));
+	res.sendFile( path.join(index.meta[req.params.id], "info.json"), options);
 });
 
 app.get('/image/:id/:date', function (req, res) {
@@ -99,6 +100,10 @@ app.get('/gm/data/z0/:date', attachFileName, function (req, res) {
 	res.sendFile(path.join(cygnetDir, req.file), options);
 });
 
+app.get('/ionosphere/data/:date', attachFileName, function (req, res) {
+	let cygnetDir = path.dirname(req.route.path);
+	res.sendFile(path.join(cygnetDir, req.file), options);
+});
 
 app.listen(3000, function () {
  	console.log('iswa test server is listening on port 3000');
