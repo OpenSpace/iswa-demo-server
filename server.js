@@ -23,20 +23,16 @@ var options = {
 // ID API
 // ======
 app.get('/:id(\\d+)/', function (req, res) {
-	console.log(1);
-	console.log(path.join(index.meta[req.params.id], "info.json"));
 	res.sendFile( path.join(index.meta[req.params.id], "info.json"), options);
 });
 
 app.get('/image/:id/:date', function (req, res) {
-	console.log(2);
 	let cygnetDir = index.image[req.params.id];
 	req.file = getFileName(cygnetDir, req.params.date);
 	res.sendFile( path.join(cygnetDir, req.file), options);
 });
 
 app.get('/data/:id/:date', function (req, res) {
-	console.log(3);
 	let cygnetDir = index.data[req.params.id];
 	req.file = getFileName(index.data[req.params.id], req.params.date);
 	res.sendFile( path.join(cygnetDir, req.file), options);
@@ -46,19 +42,16 @@ app.get('/data/:id/:date', function (req, res) {
 // Images
 // ======
 app.get('/gm/images/x0/:date', attachFileName, function (req, res) {
-	console.log(4);
 	let cygnetDir = path.dirname(req.route.path);
 	res.sendFile(path.join(cygnetDir, req.file), options);
 });
 
 app.get('/gm/images/y0/:date', attachFileName, function (req, res) {
-	console.log(5);
 	let cygnetDir = path.dirname(req.route.path);
 	res.sendFile(path.join(cygnetDir, req.file), options);
 });
 
 app.get('/gm/images/z0/:date', attachFileName, function (req, res) {
-	console.log(6);
 	let cygnetDir = path.dirname(req.route.path);
 	res.sendFile(path.join(cygnetDir, req.file), options);
 });
@@ -66,36 +59,30 @@ app.get('/gm/images/z0/:date', attachFileName, function (req, res) {
 // Metadata
 // ========
 app.get('/gm/data/x0/', function (req, res) {
-	console.log(7);
 	res.sendFile("/gm/meta/x0/info.json", options);
 });
 
 app.get('/gm/data/y0/', function (req, res) {
-	console.log(8);
 	res.sendFile("/gm/meta/y0/info.json", options);
 });
 
 app.get('/gm/data/z0/', function (req, res) {
-	console.log(9);
 	res.sendFile("/gm/meta/z0/info.json", options);
 });
 
 // data
 // ====
 app.get('/gm/data/x0/:date', attachFileName, function (req, res) {
-	console.log(10);
 	let cygnetDir = path.dirname(req.route.path);
 	res.sendFile(path.join(cygnetDir, req.file), options);
 });
 
 app.get('/gm/data/y0/:date', attachFileName, function (req, res) {
-	console.log(11);
 	let cygnetDir = path.dirname(req.route.path);
 	res.sendFile(path.join(cygnetDir, req.file), options);
 });
 
 app.get('/gm/data/z0/:date', attachFileName, function (req, res) {
-	console.log(12);
 	let cygnetDir = path.dirname(req.route.path);
 	res.sendFile(path.join(cygnetDir, req.file), options);
 });
