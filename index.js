@@ -19,18 +19,18 @@ exports.data = {
 	'6': '/gm2/data/z0/',
 	'7': '/gm2/data/x-10/',
 	'8': '/gm2/data/x-20/',
-	'9': '/gm2/data/x-30/'
+	'9': '/gm2/data/x-30/',
 	'10': '/ionosphere/data/',
 }
 exports.meta = {
 	'1': '/gm/meta/x0/',
 	'2': '/gm/meta/y0/',
 	'3': '/gm/meta/z0/',
-	'4': '/gm/meta/x0/',
-	'5': '/gm/meta/y0/',
-	'6': '/gm/meta/z0/',
+	'4': '/gm2/meta/x0/',
+	'5': '/gm2/meta/y0/',
+	'6': '/gm2/meta/z0/',
 	'7': '/gm2/meta/x0/',
-	'8': '/gm2/meta/y0/',
-	'9': '/gm2/meta/z0/',
+	'8': '/gm2/meta/x0/',
+	'9': '/gm2/meta/x0/',
 	'10': '/ionosphere/meta/',
 }
