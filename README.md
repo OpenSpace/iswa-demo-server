@@ -16,13 +16,13 @@ Run server
 
 API (for development)
 -----
-Each demo cygnet has a unique ID specified in >index.js 
+Each demo cygnet has a unique ID specified in *index.js* 
 
 * To request metadata for a cygnet, pass its id as a parameter 
 `localhost:3000/:id`
-* To request the latest image cygnet for a specific timestamp
+* To request the latest image cygnet for a specific UTC formatted timestamp
 `localhost:3000/image/:id/:timestamp`
-* To request the latest data cygnet for a specific timestamp
+* To request the latest data cygnet for a specific UTC formatted timestamp
 `localhost:3000/data/:id/:timestamp`
 
 Examples:
